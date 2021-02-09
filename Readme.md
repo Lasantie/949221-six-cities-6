@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Levan Iremadze](https://up.htmlacademy.ru/react/6/user/949221).
-* Наставник: `Неизвестно`.
+* Наставник: [Андрей Карякин](https://htmlacademy.ru/profile/id133011).
 
 ---
 
