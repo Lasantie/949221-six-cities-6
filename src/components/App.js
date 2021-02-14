@@ -2,82 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from "./Card";
 
-const App = ({quantity}) => {
-
-  const cards = [
-    {
-      id: `1`,
-      href: `#`,
-      img: `img/apartment-01.jpg`,
-      priceValue: `120`,
-      priceText: `night`,
-      name: `Beautiful & luxurious apartment at great location`,
-      type: `Apartment`,
-      premium: true,
-      rating: 4,
-      bookmark: false,
-    },
-    {
-      id: `2`,
-      href: `#`,
-      img: `img/room.jpg`,
-      priceValue: `80`,
-      priceText: `night`,
-      name: `Wood and stone place`,
-      type: `Private room`,
-      premium: false,
-      rating: 4,
-      bookmark: true,
-    },
-    {
-      id: `3`,
-      href: `#`,
-      img: `img/apartment-02.jpg`,
-      priceValue: `132`,
-      priceText: `night`,
-      name: `Canal View Prinsengracht`,
-      type: `Apartment`,
-      premium: false,
-      rating: 4,
-      bookmark: false,
-    },
-    {
-      id: `4`,
-      href: `#`,
-      img: `img/apartment-03.jpg`,
-      priceValue: `180`,
-      priceText: `night`,
-      name: `Nice, cozy, warm big bed apartment`,
-      type: `Apartment`,
-      premium: true,
-      rating: 5,
-      bookmark: false,
-    },
-    {
-      id: `5`,
-      href: `#`,
-      img: `img/room.jpg`,
-      priceValue: `80`,
-      priceText: `night`,
-      name: `Wood and stone place`,
-      type: `Private room`,
-      premium: false,
-      rating: 4,
-      bookmark: true,
-    }
-  ];
-
-  let count = 0;
-  const allCards = cards.map((item) => {
-    const card = count < quantity ?
-      <>
-        <Card item={item}/>
-      </> : undefined;
-    count++;
-    return (
-      card
-    );
-  });
+const App = ({cards}) => {
 
   return (
     <div className="page page--gray page--main">
@@ -162,7 +87,13 @@ const App = ({quantity}) => {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {allCards}
+                {
+                  cards.map((card) => {
+                    return (<>
+                      <Card card={card}/>
+                    </>);
+                  })
+                }
               </div>
             </section>
             <div className="cities__right-section">
@@ -176,7 +107,18 @@ const App = ({quantity}) => {
 };
 
 App.propTypes = {
-  quantity: PropTypes.number,
+  cards: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    href: PropTypes.string,
+    img: PropTypes.string,
+    priceValue: PropTypes.string,
+    priceText: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    premium: PropTypes.bool,
+    rating: PropTypes.number,
+    bookmark: PropTypes.bool
+  })),
 };
 
 export default App;
