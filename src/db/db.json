@@ -65,14 +65,14 @@
       "type": "Apartment",
       "is_premium": true,
       "rating": 4.8,
-      "is_favorite": false,
+      "is_favorite": true,
       "city": {
         "location": {
           "latitude": 52.370216,
           "longitude": 4.895168,
           "zoom": 10
         },
-        "name": "Amsterdam"
+        "name": "Paris"
       }
     },
     {

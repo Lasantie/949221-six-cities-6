@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 const Card = ({
   card: {
     id,
-    href,
     preview_image,
     price,
     title,
@@ -56,15 +55,14 @@ const Card = ({
 
 Card.propTypes = {
   card: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    href: PropTypes.string,
+    id: PropTypes.string,
     preview_image: PropTypes.string,
     price: PropTypes.string,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     type: PropTypes.string,
-    is_premium: PropTypes.bool.isRequired,
+    is_premium: PropTypes.bool,
     rating: PropTypes.number,
-    is_favorite: PropTypes.bool.isRequired,
+    is_favorite: PropTypes.bool,
   }),
 };
 
