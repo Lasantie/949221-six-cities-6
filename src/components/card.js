@@ -6,24 +6,24 @@ import {Link} from 'react-router-dom';
 const Card = ({
   card: {
     id,
-    preview_image,
+    previewImage,
     price,
     title,
     type,
-    is_premium,
+    isPremium,
     rating,
-    is_favorite
+    isFavorite
   }
 }) => {
 
-  const favorite = `place-card__bookmark-button button ${is_favorite ? `place-card__bookmark-button--active` : ``}`;
+  const favorite = `place-card__bookmark-button button ${isFavorite ? `place-card__bookmark-button--active` : ``}`;
 
   return (
     <article className="cities__place-card place-card" key={id}>
-      {is_premium && <Premium/>}
+      {isPremium && <Premium/>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`/offer/${id}`}>
-          <img className="place-card__image" src={preview_image} width="260" height="200" alt="Place image"/>
+          <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place image"/>
         </Link>
       </div>
       <div className="place-card__info">
@@ -56,13 +56,13 @@ const Card = ({
 Card.propTypes = {
   card: PropTypes.shape({
     id: PropTypes.string,
-    preview_image: PropTypes.string,
+    previewImage: PropTypes.string,
     price: PropTypes.string,
     title: PropTypes.string,
     type: PropTypes.string,
-    is_premium: PropTypes.bool,
+    isPremium: PropTypes.bool,
     rating: PropTypes.number,
-    is_favorite: PropTypes.bool,
+    isFavorite: PropTypes.bool,
   }),
 };
 

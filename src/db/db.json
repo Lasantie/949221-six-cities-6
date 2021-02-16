@@ -2,13 +2,13 @@
   {
       "id": "1",
       "href": "#",
-      "preview_image": "img/apartment-01.jpg",
+      "previewImage": "img/apartment-01.jpg",
       "price": "120",
       "title": "Beautiful & luxurious apartment at great location",
       "type": "Apartment",
-      "is_premium": true,
+      "isPremium": true,
       "rating": 4,
-      "is_favorite": true,
+      "isFavorite": true,
       "city": {
         "location": {
           "latitude": 52.370216,
@@ -21,13 +21,13 @@
     {
       "id": "2",
       "href": "#",
-      "preview_image": "img/room.jpg",
+      "previewImage": "img/room.jpg",
       "price": "80",
       "title": "Wood and stone place",
       "type": "Private room",
-      "is_premium": false,
+      "isPremium": false,
       "rating": 4,
-      "is_favorite": false,
+      "isFavorite": false,
       "city": {
         "location": {
           "latitude": 52.370216,
@@ -40,13 +40,13 @@
     {
       "id": "3",
       "href": "#",
-      "preview_image": "img/apartment-02.jpg",
+      "previewImage": "img/apartment-02.jpg",
       "price": "132",
       "title": "Canal View Prinsengracht",
       "type": "Apartment",
-      "is_premium": false,
+      "isPremium": false,
       "rating": 4,
-      "is_favorite": false,
+      "isFavorite": false,
       "city": {
         "location": {
           "latitude": 52.370216,
@@ -59,13 +59,13 @@
     {
       "id": "4",
       "href": "#",
-      "preview_image": "img/apartment-03.jpg",
+      "previewImage": "img/apartment-03.jpg",
       "price": "180",
       "title": "Nice, cozy, warm big bed apartment",
       "type": "Apartment",
-      "is_premium": true,
+      "isPremium": true,
       "rating": 4.8,
-      "is_favorite": true,
+      "isFavorite": true,
       "city": {
         "location": {
           "latitude": 52.370216,
@@ -78,13 +78,13 @@
     {
       "id": "5",
       "href": "#",
-      "preview_image": "img/room.jpg",
+      "previewImage": "img/room.jpg",
       "price": "80",
       "title": "Wood and stone place",
       "type": "Private room",
-      "is_premium": false,
+      "isPremium": false,
       "rating": 4,
-      "is_favorite": true,
+      "isFavorite": true,
       "city": {
         "location": {
           "latitude": 52.370216,

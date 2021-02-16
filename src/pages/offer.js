@@ -2,7 +2,8 @@ import React, {Fragment} from 'react';
 import {withLayout} from "../hocs/with-layout";
 import PropTypes from 'prop-types';
 
-const Offer = ({id}) => {
+// Пока не использую id, lint ругается
+const Offer = () => {
   return (
     <Fragment>
       <main className="page__main page__main--property">

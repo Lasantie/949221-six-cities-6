@@ -8,7 +8,7 @@ const Favorites = ({cards}) => {
 
   let cities = new Set();
   cards.forEach((card) => {
-    if (card.is_favorite) {
+    if (card.isFavorite) {
       cities.add(card.city.name);
     }
   });
@@ -42,7 +42,7 @@ const Favorites = ({cards}) => {
 Favorites.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
-    is_favorite: PropTypes.bool,
+    isFavorite: PropTypes.bool,
   })),
 };
 

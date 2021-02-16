@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 
 const FavoriteCity = ({city, cards}) => {
 
-  const favoriteCards = cards.map((card) => card.is_favorite && city === card.city.name && <FavoriteCard key={card.id} card={card}/>);
+  const favoriteCards = cards.map((card) => card.isFavorite && city === card.city.name && <FavoriteCard key={card.id} card={card}/>);
 
   return (
     <li className="favorites__locations-items">
       <div className="favorites__locations locations locations--current">
         <div className="locations__item">
-          <Link to="/amsterdam" className="locations__item-link">
-            <span>Amsterdam</span>
+          <Link to={`/${city}`} className="locations__item-link">
+            <span>{city}</span>
           </Link>
         </div>
       </div>
@@ -27,7 +27,7 @@ FavoriteCity.propTypes = {
   city: PropTypes.string,
   cards: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
-    is_favorite: PropTypes.bool,
+    isFavorite: PropTypes.bool,
   })),
 
 };

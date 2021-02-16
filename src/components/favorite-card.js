@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const FavoriteCard = ({
   card: {
     id,
-    preview_image,
+    previewImage,
     price,
     title,
     type,
@@ -17,7 +17,7 @@ const FavoriteCard = ({
     <article className="favorites__card place-card">
       <div className="favorites__image-wrapper place-card__image-wrapper">
         <Link to={`/offer/${id}`}>
-          <img className="place-card__image" src={preview_image} width="150" height="110"
+          <img className="place-card__image" src={previewImage} width="150" height="110"
             alt="Place image"/>
         </Link>
       </div>
@@ -52,7 +52,7 @@ const FavoriteCard = ({
 FavoriteCard.propTypes = {
   card: PropTypes.shape({
     id: PropTypes.string,
-    preview_image: PropTypes.string,
+    previewImage: PropTypes.string,
     price: PropTypes.string,
     title: PropTypes.string,
     type: PropTypes.string,
