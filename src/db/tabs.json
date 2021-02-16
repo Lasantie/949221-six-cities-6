@@ -1,0 +1,40 @@
+{
+  "tabs": [
+    {
+      "title": "Paris",
+      "id": "1",
+      "url": "/paris",
+      "selected": false
+    },
+    {
+      "title": "Cologne",
+      "id": "2",
+      "url": "/cologne",
+      "selected": false
+    },
+    {
+      "title": "Brussels",
+      "id": "3",
+      "url": "/brussels",
+      "selected": false
+    },
+    {
+      "title": "Amsterdam",
+      "id": "4",
+      "url": "/amsterdam",
+      "selected": true
+    },
+    {
+      "title": "Hamburg",
+      "id": "5",
+      "url": "/hamburg",
+      "selected": false
+    },
+    {
+      "title": "Dusseldorf",
+      "id": "6",
+      "url": "/dusseldorf",
+      "selected": false
+    }
+  ]
+}
