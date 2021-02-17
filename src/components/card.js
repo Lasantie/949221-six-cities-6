@@ -17,13 +17,13 @@ const Card = ({
 }) => {
 
   const favorite = `place-card__bookmark-button button ${isFavorite ? `place-card__bookmark-button--active` : ``}`;
-  const offerId = `/offer/${id}`;
+  const offerUrl = `/offer/${id}`;
 
   return (
     <article className="cities__place-card place-card" key={id}>
       {isPremium && <Premium/>}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={offerId}>
+        <Link to={offerUrl}>
           <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place image"/>
         </Link>
       </div>
@@ -47,7 +47,7 @@ const Card = ({
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={offerId}>{title}</Link>
+          <Link to={offerUrl}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
