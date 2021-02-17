@@ -1,26 +1,27 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {Link} from 'react-router-dom';
 import tabsFromDB from '../db/tabs.json';
 
-export default class Tabs extends Component {
+export default class Tabs extends PureComponent {
 
   constructor(props) {
     super(props);
-    this.state = {tabs: tabsFromDB.tabs};
+    this.state = {
+      tabs: tabsFromDB.tabs
+    };
   }
 
   onTabSelect(event, tabId) {
     event.preventDefault(); // Пока страниц нет, что бы не перекидывало на 404
-    const {tabs} = this.state;
+    const tabs = [...this.state.tabs];
     tabs.forEach((tab) => {
       tab.selected = tab.id === tabId;
     });
-    this.setState(tabs);
+    this.setState({tabs});
   }
 
   render() {
     const {tabs} = this.state;
-
     return (
       <div className="tabs">
         <section className="locations container">
