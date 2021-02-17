@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import PropTypes from 'prop-types';
+import CardPropTypes from "../prop-types/card-prop-types";
 
 const FavoriteCard = ({
   card: {
@@ -49,15 +49,6 @@ const FavoriteCard = ({
   );
 };
 
-FavoriteCard.propTypes = {
-  card: PropTypes.shape({
-    id: PropTypes.string,
-    previewImage: PropTypes.string,
-    price: PropTypes.string,
-    title: PropTypes.string,
-    type: PropTypes.string,
-    rating: PropTypes.number,
-  }),
-};
+FavoriteCard.propTypes = {card: CardPropTypes};
 
 export default FavoriteCard;

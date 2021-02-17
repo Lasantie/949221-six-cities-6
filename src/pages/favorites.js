@@ -3,6 +3,7 @@ import {withLayout} from "../hocs/with-layout";
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FavoriteCity from '../components/favorite-city';
+import CardPropTypes from "../prop-types/card-prop-types";
 
 const Favorites = ({cards}) => {
 
@@ -40,10 +41,7 @@ const Favorites = ({cards}) => {
 };
 
 Favorites.propTypes = {
-  cards: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    isFavorite: PropTypes.bool,
-  })),
+  cards: PropTypes.arrayOf(CardPropTypes),
 };
 
 export default withLayout(Favorites);

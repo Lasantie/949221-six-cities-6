@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {withLayout} from "../hocs/with-layout";
 import Card from "../components/card";
 import Tabs from "../components/tabs";
+import CardPropTypes from "../prop-types/card-prop-types";
 
 const Main = ({cards}) => {
   return (
@@ -47,9 +48,7 @@ const Main = ({cards}) => {
 };
 
 Main.propTypes = {
-  cards: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-  })),
+  cards: PropTypes.arrayOf(CardPropTypes),
 };
 
 export default withLayout(Main);

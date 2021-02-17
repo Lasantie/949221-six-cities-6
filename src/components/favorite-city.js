@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import FavoriteCard from "./favorite-card";
 import PropTypes from 'prop-types';
+import CardPropTypes from "../prop-types/card-prop-types";
 
 const FavoriteCity = ({city, cards}) => {
 
@@ -25,11 +26,7 @@ const FavoriteCity = ({city, cards}) => {
 
 FavoriteCity.propTypes = {
   city: PropTypes.string,
-  cards: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    isFavorite: PropTypes.bool,
-  })),
-
+  cards: PropTypes.arrayOf(CardPropTypes),
 };
 
 export default FavoriteCity;

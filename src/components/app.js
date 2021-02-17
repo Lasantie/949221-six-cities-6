@@ -6,6 +6,7 @@ import Login from "../pages/login";
 import Error404 from "../pages/404";
 import Favorites from "../pages/favorites";
 import Offer from "../pages/offer";
+import CardPropTypes from "../prop-types/card-prop-types";
 
 const App = ({cards}) => {
   return (
@@ -30,9 +31,7 @@ const App = ({cards}) => {
 };
 
 App.propTypes = {
-  cards: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-  })),
+  cards: PropTypes.arrayOf(CardPropTypes),
 };
 
 export default App;
