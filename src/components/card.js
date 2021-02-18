@@ -2,6 +2,7 @@ import React from 'react';
 import Premium from './premium';
 import {Link} from 'react-router-dom';
 import CardPropTypes from "../prop-types/card-prop-types";
+import getStarWidth from "../common-functions/get-star-width";
 
 const Card = ({
   card: {
@@ -18,6 +19,7 @@ const Card = ({
 
   const favorite = `place-card__bookmark-button button ${isFavorite ? `place-card__bookmark-button--active` : ``}`;
   const offerUrl = `/offer/${id}`;
+  const starWidth = getStarWidth(rating);
 
   return (
     <article className="cities__place-card place-card" key={id}>
@@ -42,7 +44,7 @@ const Card = ({
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${rating * 20}%`}}/>
+            <span style={starWidth}/>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>

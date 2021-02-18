@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DB from './db/db.json';
+import offers from "./mocks/offers";
 import App from './components/app';
 
 ReactDOM.render(
-    <App cards={DB.cards}/>,
+    <App cards={offers}/>,
     document.getElementById(`root`)
 );

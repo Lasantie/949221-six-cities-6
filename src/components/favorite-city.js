@@ -4,10 +4,7 @@ import FavoriteCard from "./favorite-card";
 import PropTypes from 'prop-types';
 import CardPropTypes from "../prop-types/card-prop-types";
 
-const FavoriteCity = ({city, cards}) => {
-
-  const favoriteCards = cards.map((card) => card.isFavorite && city === card.city.name && <FavoriteCard key={card.id} card={card}/>);
-
+const FavoriteCity = ({city, favoriteCards}) => {
   return (
     <li className="favorites__locations-items">
       <div className="favorites__locations locations locations--current">
@@ -18,7 +15,7 @@ const FavoriteCity = ({city, cards}) => {
         </div>
       </div>
       <div className="favorites__places">
-        {favoriteCards}
+        {favoriteCards.map((card) => city === card.city.name && <FavoriteCard key={card.id} card={card}/>)}
       </div>
     </li>
   );
@@ -26,7 +23,7 @@ const FavoriteCity = ({city, cards}) => {
 
 FavoriteCity.propTypes = {
   city: PropTypes.string,
-  cards: PropTypes.arrayOf(CardPropTypes),
+  favoriteCards: PropTypes.arrayOf(CardPropTypes),
 };
 
 export default FavoriteCity;
