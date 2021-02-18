@@ -1,20 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import {withLayout} from "../hocs/with-layout";
-import Card from "../components/card";
+import withLayout from "../hocs/with-layout";
+import Offer from "../components/offer";
 import Tabs from "../components/tabs";
-import CardPropTypes from "../prop-types/card-prop-types";
+import OfferPropTypes from "../prop-types/offer-prop-types";
+import {tabs} from '../mocks/tabs.json';
 
-const Main = ({cards}) => {
+const Main = ({offers}) => {
+
+  const [currentOfferId, changeCurrentOfferId] = useState();
+  const [currentTabId, changeCurrentTabId] = useState(1);
+
+  const onChangeCurrentOfferId = (offerId) => {
+    if (currentOfferId !== offerId) {
+      changeCurrentOfferId(offerId);
+    }
+  };
+
+  const onChangeCurrentTabId = (tabId) => {
+    if (currentTabId !== tabId) {
+      changeCurrentTabId(tabId);
+    }
+  };
+
+  const {title: cityTitle} = tabs.find((item) => item.id === currentTabId);
+
   return (
     <main className="page__main page__main--index">
       <h1 className="visually-hidden">Cities</h1>
-      <Tabs/>
+      <Tabs currentTabId={currentTabId} onChangeCurrentTabId={onChangeCurrentTabId}/>
       <div className="cities">
         <div className="cities__places-container container">
           <section className="cities__places places">
             <h2 className="visually-hidden">Places</h2>
-            <b className="places__found">312 places to stay in Amsterdam</b>
+            <b className="places__found">{offers.length} places to stay in {cityTitle}</b>
             <form className="places__sorting" action="#" method="get">
               <span className="places__sorting-caption">Sort by</span>
               <span className="places__sorting-type" tabIndex="0">
@@ -32,7 +51,7 @@ const Main = ({cards}) => {
             </form>
             <div className="cities__places-list places__list tabs__content">
               {
-                cards.map((card) => <Card key={card.id} card={card}/>)
+                offers.map((offer) => <Offer key={offer.id} offer={offer} onChangeCurrentOfferId={onChangeCurrentOfferId}/>)
               }
             </div>
           </section>
@@ -46,7 +65,7 @@ const Main = ({cards}) => {
 };
 
 Main.propTypes = {
-  cards: PropTypes.arrayOf(CardPropTypes),
+  offers: PropTypes.arrayOf(OfferPropTypes),
 };
 
 export default withLayout(Main);

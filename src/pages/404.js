@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {withLayout} from "../hocs/with-layout";
+import withLayout from "../hocs/with-layout";
 
 const Error404 = () => {
   return (

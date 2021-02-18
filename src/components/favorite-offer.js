@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import CardPropTypes from "../prop-types/card-prop-types";
+import OfferPropTypes from "../prop-types/offer-prop-types";
 import getStarWidth from "../common-functions/get-star-width";
 
-const FavoriteCard = ({
-  card: {
+const FavoriteOffer = ({
+  offer: {
     id,
     previewImage,
     price,
@@ -53,6 +53,6 @@ const FavoriteCard = ({
   );
 };
 
-FavoriteCard.propTypes = {card: CardPropTypes};
+FavoriteOffer.propTypes = {offer: OfferPropTypes};
 
-export default FavoriteCard;
+export default FavoriteOffer;

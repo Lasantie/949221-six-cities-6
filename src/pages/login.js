@@ -1,5 +1,5 @@
 import React from 'react';
-import {withLayout} from "../hocs/with-layout";
+import withLayout from "../hocs/with-layout";
 import {Link} from 'react-router-dom';
 
 const Login = () => {

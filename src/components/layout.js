@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-import authInfo from '../db/authInfo.json';
+import authInfo from '../mocks/authInfo.json';
 
 const Layout = ({children}) => {
   const authorized = authInfo.id !== null;
@@ -41,6 +41,7 @@ const Layout = ({children}) => {
 Layout.propTypes = {
   children: PropTypes.any,
 };
+
 export default Layout;
 
 

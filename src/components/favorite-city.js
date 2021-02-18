@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import FavoriteCard from "./favorite-card";
+import FavoriteOffer from "./favorite-offer";
 import PropTypes from 'prop-types';
-import CardPropTypes from "../prop-types/card-prop-types";
+import OfferPropTypes from "../prop-types/offer-prop-types";
 
-const FavoriteCity = ({city, favoriteCards}) => {
+const FavoriteCity = ({city, favoriteOffers}) => {
   return (
     <li className="favorites__locations-items">
       <div className="favorites__locations locations locations--current">
@@ -15,7 +15,7 @@ const FavoriteCity = ({city, favoriteCards}) => {
         </div>
       </div>
       <div className="favorites__places">
-        {favoriteCards.map((card) => city === card.city.name && <FavoriteCard key={card.id} card={card}/>)}
+        {favoriteOffers.map((offer) => city === offer.city.name && <FavoriteOffer key={offer.id} offer={offer}/>)}
       </div>
     </li>
   );
@@ -23,7 +23,7 @@ const FavoriteCity = ({city, favoriteCards}) => {
 
 FavoriteCity.propTypes = {
   city: PropTypes.string,
-  favoriteCards: PropTypes.arrayOf(CardPropTypes),
+  favoriteOffers: PropTypes.arrayOf(OfferPropTypes),
 };
 
 export default FavoriteCity;

@@ -2,37 +2,37 @@
   "tabs": [
     {
       "title": "Paris",
-      "id": "1",
+      "id": 1,
       "url": "/Paris",
       "selected": false
     },
     {
       "title": "Cologne",
-      "id": "2",
+      "id": 2,
       "url": "/Cologne",
       "selected": false
     },
     {
       "title": "Brussels",
-      "id": "3",
+      "id": 3,
       "url": "/Brussels",
       "selected": false
     },
     {
       "title": "Amsterdam",
-      "id": "4",
+      "id": 4,
       "url": "/Amsterdam",
       "selected": true
     },
     {
       "title": "Hamburg",
-      "id": "5",
+      "id": 5,
       "url": "/Hamburg",
       "selected": false
     },
     {
       "title": "Dusseldorf",
-      "id": "6",
+      "id": 6,
       "url": "/Dusseldorf",
       "selected": false
     }

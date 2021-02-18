@@ -1,28 +1,23 @@
 import React from 'react';
 import Premium from './premium';
 import {Link} from 'react-router-dom';
-import CardPropTypes from "../prop-types/card-prop-types";
+import PropTypes from 'prop-types';
+import OfferPropTypes from "../prop-types/offer-prop-types";
 import getStarWidth from "../common-functions/get-star-width";
 
-const Card = ({
-  card: {
-    id,
-    previewImage,
-    price,
-    title,
-    type,
-    isPremium,
-    rating,
-    isFavorite
-  }
-}) => {
+const Offer = ({offer, onChangeCurrentOfferId}) => {
+  const {id, previewImage, price, title, type, isPremium, rating, isFavorite} = offer;
 
   const favorite = `place-card__bookmark-button button ${isFavorite ? `place-card__bookmark-button--active` : ``}`;
   const offerUrl = `/offer/${id}`;
   const starWidth = getStarWidth(rating);
 
+  const onMouseOverOffer = (newId) => {
+    onChangeCurrentOfferId(newId);
+  };
+
   return (
-    <article className="cities__place-card place-card" key={id}>
+    <article className="cities__place-card place-card" key={id} onMouseOver={() => onMouseOverOffer(id)}>
       {isPremium && <Premium/>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={offerUrl}>
@@ -56,6 +51,9 @@ const Card = ({
     </article>);
 };
 
-Card.propTypes = {card: CardPropTypes};
+Offer.propTypes = {
+  offer: OfferPropTypes,
+  onChangeCurrentOfferId: PropTypes.func,
+};
 
-export default Card;
+export default Offer;

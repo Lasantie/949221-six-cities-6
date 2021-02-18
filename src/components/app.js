@@ -5,23 +5,24 @@ import Main from "../pages/main";
 import Login from "../pages/login";
 import Error404 from "../pages/404";
 import Favorites from "../pages/favorites";
-import Offer from "../pages/offer";
-import CardPropTypes from "../prop-types/card-prop-types";
+import OfferPage from "../pages/offer-page";
+import OfferPropTypes from "../prop-types/offer-prop-types";
 
-const App = ({cards}) => {
+const App = ({offers}) => {
+
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" exact>
-          <Main cards={cards}/>
+          <Main offers={offers}/>
         </Route>
         <Route path="/login" exact>
           <Login />
         </Route>
         <Route path="/favorites" exact>
-          <Favorites cards={cards}/>
+          <Favorites offers={offers}/>
         </Route>
-        <Route path="/offer/:id?" exact component={Offer}/>
+        <Route path="/offer/:id?" exact component={OfferPage}/>
         <Route>
           <Error404 />
         </Route>
@@ -31,7 +32,7 @@ const App = ({cards}) => {
 };
 
 App.propTypes = {
-  cards: PropTypes.arrayOf(CardPropTypes),
+  offers: PropTypes.arrayOf(OfferPropTypes),
 };
 
 export default App;

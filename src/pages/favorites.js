@@ -1,26 +1,26 @@
 import React, {useMemo} from 'react';
-import {withLayout} from "../hocs/with-layout";
+import withLayout from "../hocs/with-layout";
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FavoriteCity from '../components/favorite-city';
-import CardPropTypes from "../prop-types/card-prop-types";
+import OfferPropTypes from "../prop-types/offer-prop-types";
 
-const Favorites = ({cards}) => {
+const Favorites = ({offers}) => {
 
   const favorite = useMemo(() => {
     const resultCities = new Set();
-    const resultCards = [];
-    cards.forEach((card) => {
-      if (card.isFavorite) {
-        resultCities.add(card.city.name);
-        resultCards.push(card);
+    const resultOffers = [];
+    offers.forEach((offer) => {
+      if (offer.isFavorite) {
+        resultCities.add(offer.city.name);
+        resultOffers.push(offer);
       }
     });
     return {
       cities: Array.from(resultCities),
-      cards: resultCards
+      offers: resultOffers,
     };
-  }, cards);
+  }, offers);
 
   return (
     <div className="page">
@@ -30,7 +30,7 @@ const Favorites = ({cards}) => {
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
               {
-                favorite.cities.map((city) => <FavoriteCity key={city} city={city} favoriteCards={favorite.cards}/>)
+                favorite.cities.map((city) => <FavoriteCity key={city} city={city} favoriteOffers={favorite.offers}/>)
               }
             </ul>
           </section>
@@ -46,7 +46,7 @@ const Favorites = ({cards}) => {
 };
 
 Favorites.propTypes = {
-  cards: PropTypes.arrayOf(CardPropTypes),
+  offers: PropTypes.arrayOf(OfferPropTypes),
 };
 
 export default withLayout(Favorites);
