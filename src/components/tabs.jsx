@@ -3,11 +3,11 @@ import {NavLink} from 'react-router-dom';
 import {tabs} from '../mocks/tabs.json';
 import PropTypes from 'prop-types';
 
-const Tabs = ({currentTabId, onChangeCurrentTabId}) => {
+const Tabs = ({currentTabId, handleCurrentTabId}) => {
 
   const onTabSelect = (event, newTabId) => {
     event.preventDefault();
-    onChangeCurrentTabId(newTabId);
+    handleCurrentTabId(newTabId);
   };
 
   return (
@@ -30,7 +30,7 @@ const Tabs = ({currentTabId, onChangeCurrentTabId}) => {
 
 Tabs.propTypes = {
   currentTabId: PropTypes.number,
-  onChangeCurrentTabId: PropTypes.func,
+  handleCurrentTabId: PropTypes.func,
 };
 
 export default Tabs;

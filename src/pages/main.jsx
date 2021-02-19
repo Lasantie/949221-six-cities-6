@@ -8,27 +8,15 @@ import {tabs} from '../mocks/tabs.json';
 
 const Main = ({offers}) => {
 
-  const [currentOfferId, changeCurrentOfferId] = useState();
-  const [currentTabId, changeCurrentTabId] = useState(1);
-
-  const onChangeCurrentOfferId = (offerId) => {
-    if (currentOfferId !== offerId) {
-      changeCurrentOfferId(offerId);
-    }
-  };
-
-  const onChangeCurrentTabId = (tabId) => {
-    if (currentTabId !== tabId) {
-      changeCurrentTabId(tabId);
-    }
-  };
+  const [currentOfferId, handleCurrentOfferId] = useState();
+  const [currentTabId, handleCurrentTabId] = useState(1);
 
   const {title: cityTitle} = tabs.find((item) => item.id === currentTabId);
 
   return (
     <main className="page__main page__main--index">
       <h1 className="visually-hidden">Cities</h1>
-      <Tabs currentTabId={currentTabId} onChangeCurrentTabId={onChangeCurrentTabId}/>
+      <Tabs currentTabId={currentTabId} handleCurrentTabId={handleCurrentTabId}/>
       <div className="cities">
         <div className="cities__places-container container">
           <section className="cities__places places">
@@ -52,7 +40,7 @@ const Main = ({offers}) => {
             <div className="cities__places-list places__list tabs__content">
               {
                 offers.map((offer) => <Offer key={offer.id} offer={offer}
-                  onChangeCurrentOfferId={onChangeCurrentOfferId}/>)
+                  currentOfferId={currentOfferId} handleCurrentOfferId={handleCurrentOfferId}/>)
               }
             </div>
           </section>
