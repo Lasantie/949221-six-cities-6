@@ -1,6 +1,6 @@
 import React from 'react';
 import withLayout from "../hocs/with-layout";
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -24,9 +24,9 @@ const Login = () => {
           </section>
           <section className="locations locations--login locations--current">
             <div className="locations__item">
-              <Link to="/amsterdam" className="locations__item-link">
+              <NavLink to="/amsterdam" className="locations__item-link">
                 <span>Amsterdam</span>
-              </Link>
+              </NavLink>
             </div>
           </section>
         </div>

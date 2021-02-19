@@ -3,7 +3,7 @@ import Premium from './premium';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import OfferPropTypes from "../prop-types/offer-prop-types";
-import getStarWidth from "../common-functions/get-star-width";
+import getStarWidth from "../utils/get-star-width";
 
 const Offer = ({offer, onChangeCurrentOfferId}) => {
   const {id, previewImage, price, title, type, isPremium, rating, isFavorite} = offer;

@@ -1,5 +1,5 @@
 import React from 'react';
-import getStarWidth from "../common-functions/get-star-width";
+import getStarWidth from "../utils/get-star-width";
 import ReviewPropTypes from "../prop-types/review-prop-types";
 
 const ReviewCard = ({review}) => {
