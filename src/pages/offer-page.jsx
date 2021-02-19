@@ -35,6 +35,7 @@ const OfferPage = ({match: {params: {id}}}) => {
     host,
     description
   } = offer;
+
   const favorite = `property__bookmark-button button ${isFavorite ? `property__bookmark-button--active` : ``}`;
   const starWidth = getStarWidth(rating);
   const bedroomTitle = `${bedrooms} bedroom${bedrooms > 1 ? `s` : ``}`;

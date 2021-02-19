@@ -8,7 +8,7 @@ import {tabs} from '../mocks/tabs.json';
 
 const Main = ({offers}) => {
 
-  const [currentOfferId, handleCurrentOfferId] = useState();
+  const [, handleCurrentOfferId] = useState();
   const [currentTabId, handleCurrentTabId] = useState(1);
 
   const {title: cityTitle} = tabs.find((item) => item.id === currentTabId);
@@ -40,7 +40,7 @@ const Main = ({offers}) => {
             <div className="cities__places-list places__list tabs__content">
               {
                 offers.map((offer) => <Offer key={offer.id} offer={offer}
-                  currentOfferId={currentOfferId} handleCurrentOfferId={handleCurrentOfferId}/>)
+                  handleCurrentOfferId={handleCurrentOfferId}/>)
               }
             </div>
           </section>
