@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import OfferPropTypes from "../prop-types/offer-prop-types";
 import getStarWidth from "../utils/get-star-width";
 
-const Offer = ({offer, handleCurrentOfferId}) => {
+const Offer = ({offer, onOfferSelect}) => {
   const {id, previewImage, price, title, type, isPremium, rating, isFavorite} = offer;
 
   const favorite = `place-card__bookmark-button button ${isFavorite ? `place-card__bookmark-button--active` : ``}`;
@@ -13,7 +13,7 @@ const Offer = ({offer, handleCurrentOfferId}) => {
   const starWidth = getStarWidth(rating);
 
   return (
-    <article className="cities__place-card place-card" key={id} onMouseOver={() => handleCurrentOfferId(id)}>
+    <article className="cities__place-card place-card" key={id} onMouseOver={() => onOfferSelect(id)}>
       {isPremium && <Premium/>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={offerUrl}>
@@ -49,7 +49,7 @@ const Offer = ({offer, handleCurrentOfferId}) => {
 
 Offer.propTypes = {
   offer: OfferPropTypes,
-  handleCurrentOfferId: PropTypes.func,
+  onOfferSelect: PropTypes.func,
 };
 
 export default Offer;

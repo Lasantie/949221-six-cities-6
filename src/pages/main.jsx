@@ -1,21 +1,28 @@
-import React, {useState, useMemo} from 'react';
+import React, {useState, useMemo, useCallback} from 'react';
 import PropTypes from 'prop-types';
-import withLayout from "../hocs/with-layout";
+
 import Offer from "../components/offer";
 import Tabs from "../components/tabs";
+
 import OfferPropTypes from "../prop-types/offer-prop-types";
+
+import withLayout from "../hocs/with-layout";
+
 import {tabs} from '../mocks/tabs.json';
 
 const Main = ({offers}) => {
 
-  const [, handleCurrentOfferId] = useState();
+  const [, handleSetCurrentOffer] = useState();
   const [currentTabId, handleCurrentTabId] = useState(1);
-  const [optionsOpen, handleOptions] = useState(false);
+  const [optionsOpen, handleOptionsClick] = useState(false);
 
   const cityTitle = useMemo(() => {
     const {title} = tabs.find((item) => item.id === currentTabId);
+
     return title;
-  }, tabs);
+  }, [currentTabId]);
+
+  const handleToggleOption = useCallback(() => handleOptionsClick(!optionsOpen), [optionsOpen]);
 
   return (
     <main className="page__main page__main--index">
@@ -28,23 +35,45 @@ const Main = ({offers}) => {
             <b className="places__found">{offers.length} places to stay in {cityTitle}</b>
             <form className="places__sorting" action="#" method="get">
               <span className="places__sorting-caption">Sort by</span>
-              <span className="places__sorting-type" tabIndex="0" onClick={() => handleOptions(!optionsOpen)}>
-                  &nbsp;Popular
+              <span className="places__sorting-type" tabIndex="0"
+                onClick={handleToggleOption}
+
+              >&nbsp;Popular
                 <svg className="places__sorting-arrow" width="7" height="4">
                   <use xlinkHref={`#icon-arrow-select`}/>
                 </svg>
               </span>
               <ul className={`places__options places__options--custom ${optionsOpen && `places__options--opened`}`}>
-                <li key={`21`} className="places__option places__option--active" tabIndex="0" onClick={() => handleOptions(false)}>Popular</li>
-                <li key={`22`} className="places__option" tabIndex="0" onClick={() => handleOptions(false)}>Price: low to high</li>
-                <li key={`23`} className="places__option" tabIndex="0" onClick={() => handleOptions(false)}>Price: high to low</li>
-                <li key={`24`} className="places__option" tabIndex="0" onClick={() => handleOptions(false)}>Top rated first</li>
+                <li key={`21`} className="places__option places__option--active" tabIndex="0"
+                  onClick={handleToggleOption}
+
+                >Popular
+                </li>
+                <li key={`22`} className="places__option" tabIndex="0"
+                  onClick={handleToggleOption}
+
+                >Price: low to high
+                </li>
+                <li key={`23`} className="places__option" tabIndex="0"
+                  onClick={handleToggleOption}
+
+                >Price: high to low
+                </li>
+                <li key={`24`} className="places__option" tabIndex="0"
+                  onClick={handleToggleOption}
+
+                >Top rated first
+                </li>
               </ul>
             </form>
             <div className="cities__places-list places__list tabs__content">
               {
-                offers.map((offer) => <Offer key={offer.id} offer={offer}
-                  handleCurrentOfferId={handleCurrentOfferId}/>)
+                offers.map((offer) =>
+                  <Offer
+                    key={offer.id}
+                    offer={offer}
+                    onOfferSelect={handleSetCurrentOffer}
+                  />)
               }
             </div>
           </section>
