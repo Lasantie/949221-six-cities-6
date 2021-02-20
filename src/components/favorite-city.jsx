@@ -1,8 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import FavoriteOffer from "./favorite-offer";
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
+
 import OfferPropTypes from "../prop-types/offer-prop-types";
+
+import FavoriteOffer from "./favorite-offer";
 
 const FavoriteCity = ({city, favoriteOffers}) => {
   return (
@@ -15,7 +17,11 @@ const FavoriteCity = ({city, favoriteOffers}) => {
         </div>
       </div>
       <div className="favorites__places">
-        {favoriteOffers.map((offer) => city === offer.city.name && <FavoriteOffer key={offer.id} offer={offer}/>)}
+        {favoriteOffers.map((offer) => city === offer.city.name &&
+          <FavoriteOffer
+            key={offer.id}
+            offer={offer}
+          />)}
       </div>
     </li>
   );

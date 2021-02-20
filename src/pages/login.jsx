@@ -1,6 +1,7 @@
 import React from 'react';
-import withLayout from "../hocs/with-layout";
 import {NavLink} from 'react-router-dom';
+
+import withLayout from "../hocs/with-layout";
 
 const Login = () => {
   return (

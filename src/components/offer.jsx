@@ -1,7 +1,9 @@
 import React from 'react';
-import Premium from './premium';
-import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
+
+import Premium from './premium';
+
 import OfferPropTypes from "../prop-types/offer-prop-types";
 import getStarWidth from "../utils/get-star-width";
 
@@ -13,7 +15,10 @@ const Offer = ({offer, onOfferSelect}) => {
   const starWidth = getStarWidth(rating);
 
   return (
-    <article className="cities__place-card place-card" key={id} onMouseOver={() => onOfferSelect(id)}>
+    <article className="cities__place-card place-card"
+      key={id}
+      onMouseOver={() => onOfferSelect(id)}
+    >
       {isPremium && <Premium/>}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={offerUrl}>

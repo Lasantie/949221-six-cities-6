@@ -1,8 +1,10 @@
 import React, {useMemo} from 'react';
-import withLayout from "../hocs/with-layout";
-import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import {NavLink} from 'react-router-dom';
+
 import FavoriteCity from '../components/favorite-city';
+
+import withLayout from "../hocs/with-layout";
 import OfferPropTypes from "../prop-types/offer-prop-types";
 
 const Favorites = ({offers}) => {
@@ -30,7 +32,12 @@ const Favorites = ({offers}) => {
             <h1 className="favorites__title">Saved listing</h1>
             <ul className="favorites__list">
               {
-                favorite.cities.map((city) => <FavoriteCity key={city} city={city} favoriteOffers={favorite.offers}/>)
+                favorite.cities.map((city) =>
+                  <FavoriteCity
+                    key={city}
+                    city={city}
+                    favoriteOffers={favorite.offers}
+                  />)
               }
             </ul>
           </section>

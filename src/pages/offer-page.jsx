@@ -1,10 +1,13 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
+
+import ReviewList from "../components/rewiew-list";
+
 import withLayout from "../hocs/with-layout";
 import getStarWidth from "../utils/get-star-width";
+
 import offers from "../mocks/offers";
-import ReviewList from "../components/rewiew-list";
 
 const OfferPage = ({match: {params: {id}}}) => {
 

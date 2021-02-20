@@ -1,4 +1,5 @@
 import React from 'react';
+
 import getStarWidth from "../utils/get-star-width";
 import ReviewPropTypes from "../prop-types/review-prop-types";
 

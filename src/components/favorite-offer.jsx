@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+
 import OfferPropTypes from "../prop-types/offer-prop-types";
 import getStarWidth from "../utils/get-star-width";
 

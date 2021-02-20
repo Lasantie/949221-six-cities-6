@@ -1,7 +1,9 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-import {tabs} from '../mocks/tabs.json';
 import PropTypes from 'prop-types';
+import {NavLink} from 'react-router-dom';
+
+import {tabs} from '../mocks/tabs.json';
+
 
 const Tabs = ({currentTabId, handleCurrentTabId}) => {
 
@@ -19,6 +21,7 @@ const Tabs = ({currentTabId, handleCurrentTabId}) => {
               <NavLink to={url} activeClassName="tabs__item--active" className={`locations__item-link tabs__item`}
                 onClick={(event) => onTabSelect(event, id)}
                 isActive={() => currentTabId === id}>
+
                 <span>{title}</span>
               </NavLink>
             </li>)}
